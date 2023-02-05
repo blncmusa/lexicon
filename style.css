@@ -6,9 +6,11 @@
 
 body {
     background-color: white;
+    margin-top: 5rem;
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -16,7 +18,7 @@ body {
 .right {
     display: flex;
     gap: 1rem;
-    font-size: 30px;
+    font-size: 25px;
     align-items: center;
     height: 50px;
     width: 300px;
@@ -25,7 +27,7 @@ body {
 
 header { 
     width: 40%;
-    height: 80%;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -43,6 +45,10 @@ header {
     background-color: #ccc;
 }
   
+.moon {
+    font-size: 40px;
+
+}
 
 /* Font Selector */
 
@@ -52,6 +58,8 @@ header {
             background-color: transparent;
             min-width: 50px;
             font-family: inherit;
+            cursor: pointer;
+            width: 110px;
         }
 
         .serif-option {
@@ -73,6 +81,8 @@ header {
         .georgia-option {
             font-family: georgia;
         }
+
+        
 
 /* Round Toggle  */
 
@@ -138,3 +148,100 @@ header {
         .slider.round:before {
             border-radius: 50%;
         } 
+
+
+main {
+    height: 80%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.search-bar-container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: flex-start;
+}
+
+#search-input {
+    width:100%;
+    background-color: #ececec;
+    border: none;
+    padding: 1rem;
+}
+
+#search-button {
+    cursor: pointer;
+    border: none;
+    padding: 1rem;
+}
+
+.word {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+#search-button:active {
+    background-color: #e3e3e3;
+    transform: translateY(2px);
+}
+
+#search-input:focus {
+    outline: none
+}
+
+#pronunciation {
+    font-size: 2.5rem;
+}
+
+/* Media Queries -- Let's make this mfricker responsive  */
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin-top: 2rem;
+    }
+    header { 
+        width: 80%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    main {
+        width: 80%;
+    }
+    #logo {
+        font-size: 40px;
+    }
+    .moon {
+        font-size: 30px;
+    }
+    #select {
+        font-size: 20px;
+    }
+    .word {
+        font-size: rem;
+    }
+    #pronunciation {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+    
+    header { 
+        width: 90%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .left {
+        display: none;
+    }
+}
