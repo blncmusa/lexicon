@@ -10,6 +10,7 @@
 </head>
 <body>
     <header class="header">
+        <div id="mobile-logo"><i class="fa-solid fa-book"></i></div>
         <div class="left">
             <div id="logo"><i class="fa-solid fa-book"></i></div>
         </div>
@@ -39,10 +40,22 @@
             <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <section class="word-section">
-            <h1 class="word">word</h1>
-            <p class="pronunciation">/pronunciation/</p>
         </section>
+        <section class="generated-definitions"></section>
+            <article class="definition">
+                <div class="definition-header">
+                    <p class="part-of-speech"></p> 
+                    <!-- <hr id="hr">  -->
+                </div>
+                <section class="meaning-header"></section>
+                <div class="meaning-body">
+                </div>
+        </section>
+            </article>
     </main>
+    <footer>
+        <p>&copy github/blncmusa ⁠— portfolio project</p>
+    </footer>
 <script src="script.js"></script>
 </body>
 </html>

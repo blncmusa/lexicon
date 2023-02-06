@@ -15,42 +15,48 @@ body {
     align-items: center;
 }
 
-.right {
-    display: flex;
-    gap: 1rem;
-    font-size: 25px;
-    align-items: center;
-    height: 50px;
-    width: 300px;
-    justify-content: space-between;
+/* Header, Logo & Night-Mode Toggle  */
+
+        header { 
+        width: 40%;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .right {
+        display: flex;
+        gap: 1rem;
+        font-size: 25px;
+        align-items: center;
+        height: 50px;
+        width: 300px;
+        justify-content: space-between;
+    }
+
+    #logo {
+        font-size: 50px;
+        color: black;
+    }
+
+    #mobile-logo {
+        display: none;
+    }
+
+    .divider {
+        width: 1px;
+        height: 50px;
+        top: 0;
+        background-color: #ccc;
+    }
+    
+    .moon {
+        font-size: 40px;
+
 }
 
-header { 
-    width: 40%;
-    height: 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-#logo {
-    font-size: 50px;
-    color: black;
-}
-
-.divider {
-    width: 1px;
-    height: 50px;
-    top: 0;
-    background-color: #ccc;
-}
-  
-.moon {
-    font-size: 40px;
-
-}
-
-/* Font Selector */
+/* Font Selector Drop-Down */
 
         #select {
             font-size: 25px;
@@ -149,52 +155,165 @@ header {
             border-radius: 50%;
         } 
 
+/* Main Dimensions  */
 
-main {
-    height: 80%;
-    width: 40%;
+    main {
+        height: 80%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        /* margin-bottom: 5rem; */
+    }
+
+/* Search Bar & Search Button  */
+
+    .search-bar-container {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    #search-input {
+        width:100%;
+        background-color: #ececec;
+        border: none;
+        padding: 1rem;
+    }
+
+    #search-button {
+        cursor: pointer;
+        border: none;
+        padding: 1rem;
+    }
+
+    #search-button:active {
+        background-color: #e3e3e3;
+        transform: translateY(2px);
+    }
+
+    #search-input:focus {
+        outline: none
+    }
+
+    #search-input::placeholder {
+        font-weight: 700;
+    }
+
+/* Word & Pronunciation Section */
+
+    .word-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .play-btn {
+        padding: 30px;
+        border-radius: 500px;
+        font-size: 30px;
+        width: 100px;
+        height: 100px;
+        border: none;
+        background-color: #efd6fa;
+        color: #951bc6;
+        cursor: pointer;
+    }
+
+    .play-btn:active {
+        background-color: #d1bcd9;
+        transform: translateY(2px);
+    }
+
+    .word {
+        font-size: 6rem;
+        font-weight: 700;
+    }
+
+    .pronunciation {
+        font-size: 1.5rem;
+        color: #951bc6
+    }
+
+
+/* definition article */
+
+.definition {
+    margin-top: 30px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
-.search-bar-container {
-    width: 100%;
-    height: 10%;
+.definition:last-child {
+    margin-bottom: 10rem;
+}
+
+.definition-header {
     display: flex;
-    align-items: flex-start;
+     align-items: center;
 }
 
-#search-input {
-    width:100%;
-    background-color: #ececec;
-    border: none;
-    padding: 1rem;
+.meaning-header {
+    margin-top: 2rem;
+    font-size: 20px; 
+    opacity: 40%;
 }
 
-#search-button {
-    cursor: pointer;
-    border: none;
-    padding: 1rem;
+.meaning-body {
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 5rem;
 }
 
-.word {
-    font-size: 5rem;
+
+.meaning-body  ul {
+    list-style-type:decimal
+}
+
+/* .meaning-body ul li:before {
+    content: '\2014';
+    position: absolute;
+    margin-left: -40px;
+    font-weight: bold;
+  } */
+
+.part-of-speech {
+    font-size: 1.8rem;
     font-weight: 700;
+    position: relative;
 }
 
-#search-button:active {
-    background-color: #e3e3e3;
-    transform: translateY(2px);
+#hr {
+    border-top: 1px solid grey;
+    opacity: 70%;
+    flex-grow: 1;
+    margin: 0 10px;
 }
 
-#search-input:focus {
-    outline: none
+
+/* Error Message  */
+
+.error-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: 2rem;
+    text-align: center;
 }
 
-#pronunciation {
-    font-size: 2.5rem;
+#error-img {
+    font-size: 150px;
+    margin-top: 4rem;
 }
+
+/* ------------------------------------------------------------------------ */
 
 /* Media Queries -- Let's make this mfricker responsive  */
 
@@ -208,9 +327,11 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        margin-top: 2rem;
     }
     main {
         width: 80%;
+        gap: 1rem
     }
     #logo {
         font-size: 40px;
@@ -222,7 +343,7 @@ main {
         font-size: 20px;
     }
     .word {
-        font-size: rem;
+        font-size: 4rem;
     }
     #pronunciation {
         font-size: 2rem;
@@ -230,7 +351,6 @@ main {
 }
 
 @media screen and (max-width: 480px) {
-    
     
     header { 
         width: 90%;
@@ -244,4 +364,10 @@ main {
     .left {
         display: none;
     }
+
+    /* #mobile-logo {
+        display: block;
+        position: absolute;
+        font-size: 40px;
+    } */
 }
