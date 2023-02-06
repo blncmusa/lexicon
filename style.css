@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 /* Header, Logo & Night-Mode Toggle  */
@@ -209,7 +210,23 @@ body {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        margin-top: 1rem;
+    }
+
+    .video-contiainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
         margin-top: 1.5rem;
+    }
+
+    .video-dimensions {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        border-radius: 8px;
     }
 
     .play-btn {
@@ -236,6 +253,7 @@ body {
 
     .pronunciation {
         font-size: 1.5rem;
+        margin-top: 1.5rem;
         color: #951bc6
     }
 
@@ -317,24 +335,24 @@ body {
 
 /* Media Queries -- Let's make this mfricker responsive  */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 940px) {
     body {
         margin-top: 2rem;
     }
     header { 
-        width: 80%;
-        height: 20%;
+        width: 100%;
+        height: 10%;
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-top: 2rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
     main {
         width: 80%;
         gap: 1rem
     }
-    #logo {
-        font-size: 40px;
+    .left {
+        display: none;
     }
     .moon {
         font-size: 30px;
@@ -348,12 +366,25 @@ body {
     #pronunciation {
         font-size: 2rem;
     }
+
+    .play-btn {
+        padding: 30px;
+        border-radius: 500px;
+        font-size: 15px;
+        width: 75px;
+        height: 75px;
+        border: none;
+        background-color: #efd6fa;
+        color: #951bc6;
+        cursor: pointer;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
     
     header { 
-        width: 90%;
+        width: 100%;
         height: 10%;
         display: flex;
         justify-content: center;

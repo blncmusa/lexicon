@@ -29,6 +29,9 @@ const wordSection = document.querySelector(".word-section")
 const phonetic = document.querySelector(".pronunciation")
 const definitionContainer = document.querySelector('.generated-definitions')
 const meaningBody = document.querySelector('.meaning-body')
+const playBtn = document.querySelector(".play-btn")
+let pronunciationAudio
+const audio = document.getElementById("audio-pronunciation")
 
 searchInput.addEventListener("keypress", event => {
     if (event.key === "Enter") {
@@ -48,14 +51,16 @@ searchInput.addEventListener("keypress", event => {
   })
   .then(data => {
     console.log(data[0])
+    pronunciationAudio = data[0].phonetics.find(phonetic => phonetic.audio).audio;
     const meaning = data[0].meanings.map(meaning => {
       const definition = meaning.definitions.map(definition => {
         wordSection.innerHTML = `<section class="word-section">
         <div class="word-section-left">
             <h1 class="word">${data[0].word}</h1>
-            <p class="pronunciation">/${data[0].phonetics[1].text}/</p>
+            <p class="pronunciation">${data[0].phonetics[1].text}</p>
         </div>
         <div class="word-section-right">
+            <audio id="audio-pronunciation" src="${pronunciationAudio}"></audio>
             <button class="play-btn"><i class="fa-solid fa-play"></i></button>
         </div>
     </section>`
@@ -95,3 +100,7 @@ searchInput.addEventListener("keypress", event => {
   fontDropDown.addEventListener("change", function(event){
     body.style.fontFamily = event.target.value;
   })
+
+  // Resolve Caching Issues 
+
+  let timestamp = new Date().getTime();
