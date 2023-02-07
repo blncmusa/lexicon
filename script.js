@@ -66,6 +66,8 @@ searchInput.addEventListener("keypress", event => {
     </section>`
         return `⁠<li>${definition.definition}</li>`;
       }).join("");
+      playAudio(); // Line 108
+      scrollToWord(); // Line 123
       return `
         <article class="definition">
           <div class="definition-header">
@@ -80,6 +82,12 @@ searchInput.addEventListener("keypress", event => {
                 </ul>
               </div>
             </section>
+           ${meaning.synonyms.length > 0 ? ` <section class="synonyms">
+           <p>Synonyms</p>
+           <ul>
+             ${meaning.synonyms.map(synonym => `${synonym}`).join(", ")}
+           </ul>
+         </section>` : ""}
           </article>
         `;
     }).join("");
@@ -88,7 +96,7 @@ searchInput.addEventListener("keypress", event => {
   }).catch(error => {
     wordSection.innerHTML = ""
     console.error(error);
-    definitionContainer.innerHTML = `<div class="error-msg"><h1>Oops... I can't find "${searchValue}" in this dictionary!!</h1><p id="error-img"><i class="fa-solid fa-file-circle-exclamation"></i></p></div>`
+    definitionContainer.innerHTML = `<div class="error"><p id="error-img"><i class="fa-solid fa-file-circle-exclamation"></i></p></div><div class="error-msg"><h1>Listen, man. I don't have the definition for "${searchValue}".<br> Try another dictionary.</h1></div>`
   });
   });
 
@@ -101,6 +109,20 @@ searchInput.addEventListener("keypress", event => {
     body.style.fontFamily = event.target.value;
   })
 
-  // Resolve Caching Issues 
+// Audio 
 
-  let timestamp = new Date().getTime();
+function playAudio() {
+  const playBtn = document.querySelector(".play-btn");
+  const audio = document.querySelector("#audio-pronunciation");
+
+  playBtn.addEventListener("click", () => {
+    audio.play();
+  });
+}
+
+function scrollToWord() {
+  window.scrollTo({
+    top: wordSection.offsetTop,
+    behavior: "smooth"
+  })
+};

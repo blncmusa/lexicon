@@ -16,6 +16,35 @@ body {
     position: relative;
 }
 
+.tag-git {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -5px;
+    left: 4rem;
+    height: 40px;
+    width: 120px;
+    background-color: #7b7979;
+    color: white;
+    text-align: center;
+    padding: 20px 70px 20px 70px; 
+    font-weight: 700;
+    border-radius: 10px;
+    font-family: serif;
+}
+
+.tag-git:active {
+    background-color: #686868;
+    transform: translateY(2px);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
 /* Header, Logo & Night-Mode Toggle  */
 
         header { 
@@ -60,7 +89,7 @@ body {
 /* Font Selector Drop-Down */
 
         #select {
-            font-size: 25px;
+            font-size: 24px;
             border: none;
             background-color: transparent;
             min-width: 50px;
@@ -276,30 +305,6 @@ body {
      align-items: center;
 }
 
-.meaning-header {
-    margin-top: 2rem;
-    font-size: 20px; 
-    opacity: 40%;
-}
-
-.meaning-body {
-    font-weight: 400;
-    font-size: 20px;
-    margin-left: 5rem;
-}
-
-
-.meaning-body  ul {
-    list-style-type:decimal
-}
-
-/* .meaning-body ul li:before {
-    content: '\2014';
-    position: absolute;
-    margin-left: -40px;
-    font-weight: bold;
-  } */
-
 .part-of-speech {
     font-size: 1.8rem;
     font-weight: 700;
@@ -311,10 +316,51 @@ body {
     opacity: 70%;
     flex-grow: 1;
     margin: 0 10px;
+} 
+
+.meaning-header {
+    margin-top: 2rem;
+    font-size: 20px; 
+    opacity: 40%;
+}
+
+.meaning-body {
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+}
+
+
+.meaning-body  ul {
+    list-style-type:decimal
+}
+
+.synonyms {
+    display: flex;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.synonyms p {
+    font-weight: 700;
+    font-size: 20px; 
+    opacity: 40%;
+}
+
+
+.synonyms ul {
+    margin-left: 1rem;
 }
 
 
 /* Error Message  */
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .error-msg {
     display: flex;
